@@ -1,0 +1,588 @@
+@font-face {
+    font-family: "Tokyo";
+    src: url("../fonts/Tokyo.ttf");
+}
+
+*{
+    margin: 0
+}
+
+.gap{
+  height: 100px;
+}
+
+
+.navbar{
+  overflow: hidden;
+  background-color: #FFFDF7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  box-shadow: 5px 0px #212121;
+}
+
+#con-logo{
+    padding: 10px;
+}
+
+.navbar a {
+margin: auto;
+  color: #212121;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.cart{
+    float: right;
+}
+
+.navbar a:hover {
+  background-color: #ecebe8;
+  color: #212121;
+}
+
+/* =====  SIDE-BY-SIDE CENTRE LAYOUT  ===== */
+.personality {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;                   /* space between shoe & text */
+  height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+/* background stays behind */
+.bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* shoe beside text */
+.shoe {
+  position: relative;
+  width: clamp(280px, 35vw, 520px);
+  z-index: 2;
+}
+
+/* text block */
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+h2 {
+    color: #212121;
+    font-size: 10vw;
+    font-family: Tokyo;
+    letter-spacing: 5px;
+}
+
+h3 {
+  font-family: 'Victor Mono', monospace;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+p {
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.container{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.personality {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+html {
+    scroll-behavior: smooth;
+     background-color: #FFFDF7;
+}
+
+.heading, .btn-big{
+    align-items: center;
+  display: inline-block;
+}
+
+.heading2 {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-group{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.heading2 h2{
+    font-size: 130px;
+    margin-top: 50px;
+}
+
+.heading2 h3{
+  padding-bottom: 40px;
+}
+
+
+#gallery1{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.btn-big{ 
+margin: 50px;
+float: right;
+}
+
+/*-----BUTTONS----*/
+
+#skip {
+  position: fixed;         
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 20px;
+  background-color: #212121;
+  width: 100px;
+  height: 20px;
+  border: 2px solid #212121;
+  border-radius: 30px;
+  color: #FFFDF7;
+  text-decoration: none;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  font-size: 30px;
+    opacity: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#skip:hover {
+  background: #212121;
+  opacity: 50%;
+}
+
+
+sl-button::part(base) {
+  background: #ffeb33;           
+  color: #212121;
+  border: 3px solid #212121;
+  border-radius: 50px;               
+  padding: 10px 20px;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 4px 4px 0 0 #212121;
+  transform: translate(-2px, -2px); 
+  transition: all .15s ease;
+}
+
+sl-button::part(base):hover {
+   transform: translate(0, 0);
+  box-shadow: 2px 2px 0 0 #212121;
+}
+
+
+.scrollbar{
+    position: fixed;
+    flex-direction: column;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    
+}
+
+.scrolldot{
+    width: 10px;
+    height: 10px;
+    background-color: #212121;
+
+}
+
+
+/*----------Carousel-------------*/
+
+.carousel p{
+font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+sl-carousel{
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  --aspect-ratio: 5/8;
+  width: 1200px;
+}
+
+sl-carousel-item{
+margin: auto;
+}
+
+#scrollgallery img{
+    width: 20%;
+    display: inline-block;
+}
+
+
+/*-------------Polaroid gallery-------------------*/
+/*.p-container .polaroid {
+    width: 200px; 
+    z-index: 500;
+}
+#desc-card{
+    background-color: #ffffff;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    z-index: 900;
+    isolation: isolate;
+    border: 5px solid #212121 ;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+#desc-card img {
+    width:200px;
+}
+#p1{
+   top: -100px;
+  left: 325px;
+}*/
+
+#p-gallery {
+  position: relative;   /* everything anchors here */
+  overflow: visible;    /* let photos spill out */
+  min-height: 100vh;    /* keep your existing height */
+}
+
+#polaroid-stack {
+  position: relative;   /* stacking context */
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- description card (starts on top) ---- */
+#desc-card {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 400px;
+  height: fit-content;
+  background: #fffdf7;
+  border: 5px solid #212121;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#desc-card.behind { z-index: 1; }   /* send to bottom after first click */
+
+/* ---- polaroids ---- */
+.polaroid {
+  position: absolute;
+  width: 200px;
+  cursor: grab;
+  z-index: 2;
+  /* no fade / no transitions – instant z change */
+}
+
+.polaroid:active { cursor: grabbing; }
+
+/*--------------  CONVERSE SHOE LEARNING-------------*/
+
+#info{
+  text-align: center;
+}
+
+#shoe-pair{
+  width: 800px;
+  margin: auto;
+  align-items: center;
+}
+
+.star{
+  width: 40px;
+}
+
+
+/*------------STYLE-TIMELINE----------------*/
+sl-carousel {
+width: 1200px;
+}
+
+
+
+/*--------STICKER CHART-------*/
+#container2{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+#big-pol {
+  width:  400px;
+  height: 500px;
+  border: 5px solid #212121;
+  border-radius:10px ;
+}
+
+.stick-op{
+  grid-column: 1/-1;
+  margin: auto;
+  display: flex;
+}
+
+#stickers{
+  background-color: #ffffff;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  border: 5px solid #212121;
+  display: grid;
+  grid: 10px;
+  grid-template-columns: 100px 100px 100px 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.stick{
+  margin: auto;
+  width: 50%;
+}
+
+#assorted-btn{
+
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+
+}
+
+/*-----REFRESH------*/
+.share{
+  margin-top: 20px;
+  background-color:#ffeb33 ;
+  color: #212121;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 30px;
+  border-radius: 30px;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid #212121;
+  box-shadow: 5px 5px 0 0 #212121;
+  transform: translate(2px, 2px);
+}
+
+.download {
+  margin-top: 20px;
+  background-color:#A1F2FF ;
+  color: #212121;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 30px;
+  border-radius: 30px;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid #212121;
+  box-shadow: 5px 5px 0 0 #212121;
+  transform: translate(2px, 2px);
+}
+
+.refresh{
+  margin-top: 20px;
+  background-color:#F69636 ;
+  color: #212121;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 30px;
+  border-radius: 30px;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid #212121;
+  box-shadow: 5px 5px 0 0 #212121;
+  transform: translate(2px, 2px);
+}
+
+/*------- Footer Main--------*/
+
+.box-left{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+  float: left;
+}
+
+.email{
+  margin: auto;
+  padding: 30px;
+  background-color: #EDFDFF;
+  border: 3px solid #212121;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 10px 10px 0 0 #212121;
+  transform: translate(10px, 10px); /* pre-lifted look */
+}
+
+.email-row{
+  display: flex;
+  gap: 1rem;
+}
+
+#arrow-btn{
+  background: #ffffff;           
+  color: #212121;
+  border: 2px solid #212121;
+  border-radius: 10px;               
+  padding: 5px 15px;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+#arrow-btn:hover{
+  background-color: #ffeb33;
+}
+
+.email p, .socials p {
+  margin-bottom: 15px;
+  width: 350px;
+  font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+input{
+  font-family: 'Victor Mono', monospace;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.socials{
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  width: 400px;
+}
+
+
+.fb,.insta{
+  margin: 20px;
+}
+
+.box-right{
+  background-color: #FFDBB8;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  border: 3px solid #212121;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 10px 10px 0 0 #212121;
+  transform: translate(10px, 10px); /* pre-lifted look */
+}
+
+.box-right h3, .box-left h3, .socials h3{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.box-right p{
+width: 300px;
+line-height: 1.6;
+font-family: 'Victor Mono', monospace;
+font-weight: 500;
+font-size: 20px;
+}
+
+.box-right p:hover{
+  color: #ffffff;
+}
+
+#summary{
+  gap: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+}
+
+footer{
+  background-color: #ffffff;
+  height: 50px;
+}
+
+footer p {
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/*----------ADRESSING ALL MAIN CONTENT---------*/
+#gallery1,#p-gallery,#info,#time-gallery,#sticker-chart {
+  height: 100vh;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 60px;
+    }
+    
+    .navbar a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+/*----OVERLAY-----*/
+
