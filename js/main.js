@@ -7,33 +7,23 @@ ScrollTrigger.create({
   onLeaveBack: () => gsap.to("#skip", { opacity: 1, duration: 0.3 })
 });
 
-
 const stack = document.getElementById('polaroid-stack');
-const desc  = document.getElementById('desc-card');
-let highest = 2;                 // top z-index tracker
+let highest = 1;
 
-/* ---------- random scatter on load ---------- */
 stack.querySelectorAll('.polaroid').forEach(img => {
-  const maxX = stack.clientWidth  - 200;
-  const maxY = stack.clientHeight - 250;
-  img.style.left = `${Math.random() * maxX}px`;
-  img.style.top  = `${Math.random() * maxY}px`;
-  img.style.transform = `rotate(${(Math.random()*20-10)}deg)`;
-});
-
-/* ---------- drag ---------- */
-stack.querySelectorAll('.polaroid').forEach(img => {
-  let dragging = false, offsetX, offsetY;
+  let dragging = false, offX, offY;
 
   img.addEventListener('mousedown', start);
   img.addEventListener('touchstart', start);
 
   function start(e) {
     dragging = true;
-    img.style.zIndex = ++highest;   // bring to very top
+    img.style.zIndex = ++highest;
+    img.style.cursor = 'grabbing';
+
     const pt = e.touches ? e.touches[0] : e;
-    offsetX = pt.clientX - img.offsetLeft;
-    offsetY = pt.clientY - img.offsetTop;
+    offX = pt.clientX - img.offsetLeft;
+    offY = pt.clientY - img.offsetTop;
 
     document.addEventListener('mousemove', move);
     document.addEventListener('mouseup', end);
@@ -44,13 +34,13 @@ stack.querySelectorAll('.polaroid').forEach(img => {
   function move(e) {
     if (!dragging) return;
     const pt = e.touches ? e.touches[0] : e;
-    img.style.left = (pt.clientX - offsetX) + 'px';
-    img.style.top  = (pt.clientY - offsetY) + 'px';
+    img.style.left = (pt.clientX - offX) + 'px';
+    img.style.top = (pt.clientY - offY) + 'px';
   }
 
   function end() {
     dragging = false;
-    img.style.zIndex = --highest;   // drop one layer (no fade)
+    img.style.cursor = 'grab';
     document.removeEventListener('mousemove', move);
     document.removeEventListener('mouseup', end);
     document.removeEventListener('touchmove', move);
@@ -58,4 +48,15 @@ stack.querySelectorAll('.polaroid').forEach(img => {
   }
 });
 
-desc.addEventListener('click', () => desc.classList.add('behind'));
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.getElementById("closeModal");
+const modal = document.getElementById("modal");
+
+openBtn.addEventListener("click",() => {
+  modal.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("open");
+})
+

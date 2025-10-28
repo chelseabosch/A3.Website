@@ -241,7 +241,7 @@ font-family: 'Victor Mono', monospace;
   font-size: 18px;
 }
 
-sl-carousel{
+sl-carousel#product-gallery{
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -257,33 +257,51 @@ margin: auto;
     width: 20%;
     display: inline-block;
 }
+/* ---- description card (starts on top) ---- */
+#desc-card {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 500px;
+  height: fit-content;
+  background: #fffdf7;
+  border: 5px solid #212121;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+  box-shadow: 7px 7px rgba(0, 0, 0, 0.3)
+}
 
+#desc-card p {
+  font-size: 18px;
+}
 
-/*-------------Polaroid gallery-------------------*/
-/*.p-container .polaroid {
-    width: 200px; 
-    z-index: 500;
+#desc-card img{
+  width: 250px;
+  margin-bottom: 10px;
 }
-#desc-card{
-    background-color: #ffffff;
-    width: 500px;
-    margin: auto;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    z-index: 900;
-    isolation: isolate;
-    border: 5px solid #212121 ;
-    border-radius: 10px;
-    margin-top: 50px;
+#desc-card.behind { z-index: 1; }   /* send to bottom after first click */
+
+/* ---- polaroids ---- */
+.polaroid:active { cursor: grabbing; }
+
+#polaroid-stack {
+  position: relative;   /* containing block */
+  height: 60vh;         /* give it room */
 }
-#desc-card img {
-    width:200px;
+
+.polaroid {
+  position: absolute;
+  left: 0;   /* start at 0 0 – drag will update these */
+  top: 0;
+  width: 200px;           /* proof-of-life size */
+  cursor: grab;
+  user-select: none;
+  z-index: 1;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.3)
 }
-#p1{
-   top: -100px;
-  left: 325px;
-}*/
 
 #p-gallery {
   position: relative;   /* everything anchors here */
@@ -297,34 +315,74 @@ margin: auto;
   height: 100%;
 }
 
-/* ---- description card (starts on top) ---- */
-#desc-card {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 400px;
-  height: fit-content;
-  background: #fffdf7;
-  border: 5px solid #212121;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  z-index: 100;
-  cursor: pointer;
+#p1{
+  left: 10%;
+  top: 24%;
+  right: 0;
+  rotate: 12deg;
 }
 
-#desc-card.behind { z-index: 1; }   /* send to bottom after first click */
-
-/* ---- polaroids ---- */
-.polaroid {
-  position: absolute;
-  width: 200px;
-  cursor: grab;
-  z-index: 2;
-  /* no fade / no transitions – instant z change */
+#p2{
+  left: 22%;
+  top: 24%;
+  right: 0;
+  rotate: -22deg;
 }
 
-.polaroid:active { cursor: grabbing; }
+#p3{
+  left: 14%;
+  top: 5%;
+  right: 0;
+  rotate: -12deg;
+}
+
+#p4{
+  left: 54%;
+  top: 5%;
+  right: 0;
+  rotate: 22deg;
+}
+#p5{
+  left: 22%;
+  top: 0%;
+  right: 0;
+  rotate: 12deg;
+}
+#p6{
+  left: 40%;
+  top: 25%;
+  right: 0;
+  rotate: 22deg;
+}
+#p7{
+  left: 64%;
+  top: 2%;
+  right: 0;
+  rotate: -7deg;
+}
+#p8{
+  left: 34%;
+  top: 5%;
+  right: 0;
+  rotate: -10deg;
+}
+#p9{
+  left: 54%;
+  top: 30%;
+  right: 0;
+  rotate: 15deg;
+}
+#p10{
+  left: 74%;
+  top: 10%;
+  right: 0;
+  rotate: 8deg;
+}
+#p11{
+  left: 70%;
+  top: 30%;
+  rotate: -12deg;
+}
 
 /*--------------  CONVERSE SHOE LEARNING-------------*/
 
@@ -344,8 +402,10 @@ margin: auto;
 
 
 /*------------STYLE-TIMELINE----------------*/
-sl-carousel {
-width: 1200px;
+sl-carousel#style-timeline {
+margin: auto;
+width: 1200px ;
+--aspect-ratio: 20/16;
 }
 
 
@@ -371,7 +431,7 @@ width: 1200px;
   display: flex;
 }
 
-#stickers{
+#stickers {
   background-color: #ffffff;
   width: 400px;
   height: 500px;
@@ -385,9 +445,21 @@ width: 1200px;
 }
 
 .stick{
+  position: relative;
   margin: auto;
   width: 50%;
 }
+
+.polaroid{
+  position: absolute;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  transform: rotate(var(--r, 0));
+  cursor: grab;
+  user-select: none;
+  z-index: 1;
+}
+
 
 #assorted-btn{
 
@@ -586,3 +658,30 @@ footer p {
 
 /*----OVERLAY-----*/
 
+/*-----------modal-------------*/
+
+.modal{
+background-color: #212121;
+opacity: 0;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+transition: all 0.3s ease-in-out;
+z-index: 1;
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.modal.open{
+  opacity: 1;
+  z-index: 999;
+}
+
+.modal-inner{
+  background-color: #ffffff;
+  text-align: center;
+}
