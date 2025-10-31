@@ -1,30 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Refresher </title>
+        <title> Converse Re-design </title>
+           <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css " />
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js "></script>
-        <link rel="stylesheet" href="css/style.css"> 
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script> 
         <link rel="preconnect" href="https://fonts.googleapis.com ">
         <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital ,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     </head>
         <body>
             <header>
                     <div class="navbar">
-                    <img id="con-logo" width="200px" src="images/converse.logo.png" alt="converse logo">
-                      <!--------header menu------>
+                    <img id="con-logo" src="images/converse.logo.png" alt="converse logo">
+                      <!--header menu-->
                         <a href="#" class="style hideOnMobile" onclick="openNavStyle();"> STYLE</a>
                         <a  href="#" class="hideOnMobile" onclick="openNavMain();"> MEN</a>
                         <a href="#" class="hideOnMobile" onclick="openNavMain();"> WOMEN</a>
                         <a href="#" class="hideOnMobile" onclick="openNavMain();"> CHILDREN</a>
                         <a href="#" class="hideOnMobile" onclick="openNavMain();"> NEW </a>
-                        <a href="#" class="menu-button" onclick="mobileMenu()"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="size-6">
+                        <a href="#" class="menu-button" onclick="mobileMenu()"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                           </a>
-                     <svg class="cart hideOnMobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                     <svg class="cart hideOnMobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                       <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                     </svg>
                     </div>
@@ -39,7 +40,7 @@
                         <a href="#" onclick="openNavMain();"> NEW </a>
                     </div>
          </header>  
-          <!--------------------MENU OVERLAY------------------------------->
+          <!---------MENU OVERLAY---------------->
          <div id="navStyle" class="overlay-style">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNavStyle()">&times;</a>
                <div class="overlay-content">
@@ -135,7 +136,7 @@
      <!------Scroll bar-------->
                     <div class="scrollbar">
                         <a  href="#hero" class="active" data-section="Classic"></a>
-                        <a  href="#scroll2"class="scrolldot" data-section="Skate"></a>
+                        <a  href="#scroll2" class="scrolldot" data-section="Skate"></a>
                         <a class="scrolldot" href="#scroll3" data-section="Unique"></a>
                         <a class="scrolldot" href="#scroll4" data-section="Casual"></a>
                         <a class="scrolldot" href="#scroll5" data-section="Collector"></a>
@@ -318,7 +319,7 @@
                   </div>
                   <div class="shoe-wrap">
                   <img src="images/hightop.pair.png" alt="shoes">
-                  <svg id="star1" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <svg id="star1" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
                   <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
                   37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
                   58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
@@ -333,7 +334,7 @@
                     to the brand since 1917. <br> <br> The high ankle support was noticed by skateboards and was then on adopted into a skating shoe with the support and 
                   durabilty supported by other features, Converse began to reach new horizons with demographics</p></div>
                     </sl-popup></div>
-                 <svg id="star2" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                 <svg id="star2"  class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
                   <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
                   37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
                   58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
@@ -349,7 +350,7 @@
                      The patch soon became an iconic symbol for the shoes, becoming easily recognisable
                   providing the brand with originality and cultural significance.</p></div>
                     </sl-popup>
-                  <svg id="star3" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <svg id="star3" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
                   <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
                   37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
                   58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
@@ -361,7 +362,7 @@
                       Converse ever made is still in complete tact! <br><br>Converse shoes can be seen as an investment especially due to the thick outersole which on the chuck 70's 
                     are made out of CX rubber which is designed for even further flexabilty further adding to the quality of our best selling shoe.</p></div>
                     </sl-popup></div>
-                 <svg id="star4" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                 <svg id="star4" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
                   <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
                   37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
                   58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
@@ -374,7 +375,7 @@
                     basketballers had on impact and wear. This toe cap evolved into a much beloved skatebaording shoe as it was tough enough to handle to 
                   condition of the skateboard and pavement. <br><br> Now it is easily distinguishable from competitors and adds to the iconic appearance.</p></div>
                     </sl-popup></div>
-                  <svg id="star5" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <svg id="star5" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
                   <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
                   37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
                   58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
@@ -415,7 +416,7 @@
                             </div>
                             <div id="t10">
                               <div class="pair">
-                              <img class="tag taghidden"src="images/gallery2/tag10.png" alt="tag">
+                              <img class="tag taghidden" src="images/gallery2/tag10.png" alt="tag">
                                 <img class="imghidden t-img" src="images/gallery2/2010.png" alt="">
                               </div>
                             </div>
@@ -448,9 +449,9 @@
                                             </div>
 
                                             <div id="assorted-btn">
-                                                <button id="refresh">  &#8635</button>
+                                                <button id="refresh">  &#8635; </button>
                                                 <sl-button id="open-dialog" > SHARE </sl-button>
-                                                <button id="download">  &#8677</button>
+                                                <button id="download">  &#8677; </button>
                                               </div>
 
                                               <sl-dialog class="img-upload-msg">

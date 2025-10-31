@@ -1,5 +1,7 @@
-
+/* jshint esversion: 6 */
+/* jshint moz: true */
 gsap.registerPlugin(ScrollTrigger);
+
 //---------------PARALLAX SCROLL HERO---------// AI used to understand how to make it more dynamic and understand gsap code
 gsap.utils.toArray(".personality").forEach(section => {
   const tl = gsap.timeline({
@@ -15,13 +17,13 @@ gsap.utils.toArray(".personality").forEach(section => {
   tl.from(section.querySelector(".shoe"), {
     opacity: 0,
     x: 80,                          
-    duration: .7,
+    duration: 0.7,
     ease: "power2.out"
   })
   .from(section.querySelector(".container"), {
     opacity: 0,
     y: 50,
-    duration: .7,
+    duration: 0.7,
     ease: "power2.out"
   });                       
 });
@@ -33,7 +35,7 @@ ScrollTrigger.create({
   onEnter: () =>{ gsap.to("#skip", { opacity: 0, duration: 0.3 }),
   gsap.to(".scrollbar", { opacity: 0, duration: 0.3, pointerEvents: "none" });
 },
-  onLeaveBack: () =>{ gsap.to("#skip", { opacity: 1, duration: 0.3, pointerEvents: "auto" })
+  onLeaveBack: () =>{ gsap.to("#skip", { opacity: 1, duration: 0.3, pointerEvents: "auto" });
    gsap.to(".scrollbar", { opacity: 1, duration: 0.3 });
 }
 });
@@ -55,13 +57,13 @@ const addActiveClass = (entries, scrollIndicator) => {
       removeActiveClass();
       currentDot.classList.add("active");
     }
-  })
+  });
 };
 const options = {
   threshold: 0.8,
 };
 
-const scrollIndicator = new IntersectionObserver( addActiveClass, options)
+const scrollIndicator = new IntersectionObserver( addActiveClass, options);
 const sections = document.querySelectorAll(".personality");
 
 sections.forEach((section) => {
@@ -156,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const observerImg = new IntersectionObserver((galleryImg) => {
   
   galleryImg.forEach((enterImg) =>{
-  console.log(enterImg)
+  console.log(enterImg);
   if (enterImg.isIntersecting) {
   enterImg.target.classList.add('showimg');
   } else {
@@ -170,7 +172,7 @@ const observerImg = new IntersectionObserver((galleryImg) => {
 const observerTag = new IntersectionObserver((galleryTag) => {
   
   galleryTag.forEach((enterTag) =>{
-    console.log(enterTag)
+    console.log(enterTag);
     if (enterTag.isIntersecting) {
       enterTag.target.classList.add('showtag');
     } else {
@@ -196,7 +198,7 @@ star1.addEventListener('click', () => {
 document.addEventListener('click', e => {
   if (!e.composedPath().includes(star1) && !e.composedPath().includes(popup1))
     popup1.active = false;
-})
+});
 //-----2------//
 const star2 = document.getElementById('star2');
 const popup2 = document.getElementById('popup2');
@@ -210,7 +212,7 @@ star2.addEventListener('click', () => {
 document.addEventListener('click', e => {
   if (!e.composedPath().includes(star2) && !e.composedPath().includes(popup2))
     popup2.active = false;
-})
+});
 //-----3------//
 const star3 = document.getElementById('star3');
 const popup3 = document.getElementById('popup3');
@@ -224,7 +226,7 @@ star3.addEventListener('click', () => {
 document.addEventListener('click', e => {
   if (!e.composedPath().includes(star3) && !e.composedPath().includes(popup3))
     popup3.active = false;
-})
+});
 //-----4------//
 const star4 = document.getElementById('star4');
 const popup4 = document.getElementById('popup4');
@@ -238,7 +240,7 @@ star4.addEventListener('click', () => {
 document.addEventListener('click', e => {
   if (!e.composedPath().includes(star4) && !e.composedPath().includes(popup4))
     popup4.active = false;
-})
+});
 //-----5------//
 const star5 = document.getElementById('star5');
 const popup5 = document.getElementById('popup5');
@@ -252,7 +254,7 @@ star5.addEventListener('click', () => {
 document.addEventListener('click', e => {
   if (!e.composedPath().includes(star5) && !e.composedPath().includes(popup5))
     popup5.active = false;
-})
+});
 //----SOUND---//
 
 var sound   = new Audio('sound.mp3');
@@ -279,11 +281,11 @@ function closeNavStyle() {
 function openNavMain() {
   const height = window.innerWidth < 750 ? '100vh' : '30vh';
   document.getElementById("navMenu").style.height = height;
-   document.body.classList.add('menu-open')
+   document.body.classList.add('menu-open');
 }
 function closeNavMain() {
   document.getElementById("navMenu").style.height = "0";
-   document.body.classList.remove('menu-open')
+   document.body.classList.remove('menu-open');
 }
 
 //--------------------UPLOAD IMG------------------//
@@ -299,11 +301,11 @@ function uploadImage(){
     let imgLink = URL.createObjectURL(inputFile.files[0]);
     imageView.style.backgroundImage = `url(${imgLink})`;
     imageView.textContent = "";
-    imageView.style.border = 0
+    imageView.style.border = 0;
   btn.addEventListener('click', function (){
     imageView.style.backgroundImage = "";
     imageView.style.border = "";
-  })
+  });
 }
 
 //-----------------SHOELACE UPLOAD DIALOG---------------------//
@@ -316,10 +318,10 @@ closeBtn.addEventListener('click', dialog.hide());
 
  //-----------------------MOBILE-MENU-----------------------//
 function mobileMenu(){
-  const navMobile = document.querySelector('.navbar-mobile')
-  navMobile.style.display = 'flex'
+  const navMobile = document.querySelector('.navbar-mobile');
+  navMobile.style.display = 'flex';
 }
 function hideMobileMenu(){
-    const navMobile = document.querySelector('.navbar-mobile')
-  navMobile.style.display = 'none'
+    const navMobile = document.querySelector('.navbar-mobile');
+  navMobile.style.display = 'none';
 }
