@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Refresher </title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css " />
         <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js "></script>
@@ -12,20 +12,146 @@
     </head>
         <body>
             <header>
-                    <div class="navbar" id="overlay">
-                
+                    <div class="navbar">
                     <img id="con-logo" width="200px" src="images/converse.logo.png" alt="converse logo">
-                        
-                      <a href=""> STYLE</a>
-                        <a href=""> MEN</a>
-                        <a href=""> WOMEN</a>
-                        <a href=""> CHILDREN</a>
-                         <a href=""> NEW </a>
-                        <img class="cart" src="images/cart.png" alt="shpping cart">
+                      <!--------header menu------>
+                        <a href="#" class="style hideOnMobile" onclick="openNavStyle();"> STYLE</a>
+                        <a  href="#" class="hideOnMobile" onclick="openNavMain();"> MEN</a>
+                        <a href="#" class="hideOnMobile" onclick="openNavMain();"> WOMEN</a>
+                        <a href="#" class="hideOnMobile" onclick="openNavMain();"> CHILDREN</a>
+                        <a href="#" class="hideOnMobile" onclick="openNavMain();"> NEW </a>
+                        <a href="#" onclick="mobileMenu()"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                          </a>
+                     <svg class="cart hideOnMobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
                     </div>
-         </header>
 
-           <div class="personality" id="hero"> <!-----Opening page-->
+                     <div class="navbar-mobile">
+                      <!--------header menu------>
+                        <a href="#" onclick="hideMobileMenu()" class="close-mobile-menu ">&#10005;</a>
+                        <a href="#" class="style" onclick="openNavStyle();"> STYLE</a>
+                        <a href="#" onclick="openNavMain();"> MEN</a>
+                        <a href="#" onclick="openNavMain();"> WOMEN</a>
+                        <a href="#" onclick="openNavMain();"> CHILDREN</a>
+                        <a href="#" onclick="openNavMain();"> NEW </a>
+                    </div>
+         </header>  
+          <!--------------------MENU OVERLAY------------------------------->
+         <div id="navStyle" class="overlay-style">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNavStyle()">&times;</a>
+               <div class="overlay-content">
+
+                <div id="first-menu">
+                <div class="top-img">
+                  <img src="images/menu/con1.png" alt="">
+                  <h3> High Top</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con2.png" alt="">
+                  <h3> Low Top</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con3.png" alt="">
+                  <h3> Platform</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con4.png" alt="">
+                  <h3> Boots</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con5.png" alt="">
+                  <h3> Slip On</h3>
+                </div>
+                  </div>
+              
+                  <div id="personality-menu"> 
+                        <div class="overlay-img" id="classic-menu"> <h2> Classic</h2>
+                      <img src="images/menu/classic.png" alt=""></div>
+                       <div class="overlay-img" id="skate-menu"> <h2> Skate</h2>
+                      <img src="images/menu/skate.png" alt=""></div>
+                      <div class="overlay-img" id="unique-menu"> <h2> unique</h2>
+                      <img src="images/menu/unique.png" alt=""></div>
+                      <div class="overlay-img" id="comfort-menu"> <h2> Comfort</h2>
+                      <img src="images/menu/comfort.png" alt=""></div>
+                      <div class="overlay-img" id="collect-menu"> <h2> Collector</h2>
+                      <img src="images/menu/collector.png" alt=""></div>
+                        <div class="overlay-img" id="late-menu"> <h2> Late Night</h2>
+                      <img src="images/menu/latenight.png" alt=""></div>
+                        <div class="overlay-img" id="alt-menu"> <h2> Alt</h2>
+                      <img src="images/menu/alt.png" alt=""></div>
+                     <div class="overlay-img" id="other-menu"> 
+                    <h3> Inspiration</h3>
+                     <sl-button>Gallery</sl-button>
+                      <sl-button>History</sl-button>
+                  </div>  </div> 
+             
+              <div class="menu-gap"></div>   </div> 
+             </div>
+             <!-----------SUBCATEGORY MENU------------------>
+             <div id="navMenu" class="overlay-style-half">
+              <a href="javascript:void(0)" class="closebtnMain" onclick="closeNavMain()">&times;</a>
+               <div class="overlay-content-half">
+                
+                <div id="text-left" class="border-img col">
+                  <h3> Trending </h3>
+                  <h3> Best Sellers </h3>
+                  <h3> New Releases</h3>
+                </div>
+
+                <div id="first-menu-half" class="middle col">
+                <div class="top-img">
+                  <img src="images/menu/con1.png" alt="">
+                  <h3> High Top</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con2.png" alt="">
+                  <h3> Low Top</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con3.png" alt="">
+                  <h3> Platform</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con4.png" alt="">
+                  <h3> Boots</h3>
+                </div>
+                 <div class="top-img">
+                  <img src="images/menu/con5.png" alt="">
+                  <h3> Slip On</h3>
+                </div>
+                  </div>
+             <div id="text-right" class="border-img col"> 
+              <h3> Clothing</h3>
+              <h3> Accessories</h3>
+              <h3> Other</h3>
+             </div> 
+            </div>
+            </div>
+            
+            
+     <!------Scroll bar-------->
+                    <div class="scrollbar">
+                        <a  href="#hero" class="active" data-section="Classic"></a>
+                        <a  href="#scroll2"class="scrolldot" data-section="Skate"></a>
+                        <a class="scrolldot" href="#scroll3" data-section="Unique"></a>
+                        <a class="scrolldot" href="#scroll4" data-section="Casual"></a>
+                        <a class="scrolldot" href="#scroll5" data-section="Collector"></a>
+                        <a class="scrolldot" href="#scroll6" data-section="Late-Night"></a>
+                        <a class="scrolldot" href="#scroll7" data-section="Alternative"></a>
+                      <div class="arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                      </svg>
+                    </div>
+                  </div>
+
+            
+
+        <!-------------------PARALLAX SCROLLING---------------------->
+        <div class="personality hero" id="hero"> <!-----Opening page-->
                         <img class="bg-img" id="bg-1" src="images/backgrounds/classic.jpg" alt="">
                         <img class="shoe" id="shoe1" src="images/hightop.png" alt="con-hightop">
                         <div class="container" id="1">
@@ -34,9 +160,7 @@
                         </div>
                          <a id="skip" href="#gallery1"> SKIP </a>
                       </div>
-    
-            
-            <div class="personality" id="scroll2" data-reveal> <!------Skate----->
+            <div class="personality hidden" id="scroll2"> <!------Skate----->
                     <img class="bg-img" id="bg-2" src="images/backgrounds/skate.jpg" alt="">
                         <img class="shoe" id="shoe2" src="images/shoes/shoe.skate.png" alt="con-hightop">
                         <div class="container" id="2">
@@ -44,7 +168,7 @@
                          <sl-button>See More</sl-button>
                         </div>
                       </div>
-            <div class="personality" id="scroll3"> <!------Unique----->
+            <div class="personality hidden" id="scroll3"> <!------Unique----->
                         <img class="bg-img" id="bg-3" src="images/backgrounds/unique.jpg" alt="">
                         <img class="shoe" id="shoe3" src="images/shoes/shoe.unique.png" alt="con-hightop">
                         <div class="container" id="3">
@@ -52,7 +176,7 @@
                          <sl-button>See More</sl-button>
                         </div>
                       </div>  
-            <div class="personality" id="scroll4"> <!------Casual----->
+            <div class="personality hidden" id="scroll4"> <!------Casual----->
                         <img class="bg-img" id="bg-4" src="images/backgrounds/casual.jpg" alt="">
                         <img class="shoe" id="shoe4" src="images/shoes/shoe.casual.webp" alt="con-hightop">
                         <div class="container" id="4">
@@ -60,7 +184,7 @@
                          <sl-button>See More</sl-button>
                         </div>
                       </div>         
-            <div class="personality" id="scroll5"> <!-----Collector------->
+            <div class="personality hidden" id="scroll5"> <!-----Collector------->
                 <img class="bg-img" id="bg-5" src="images/backgrounds/collector.jpg" alt="">
                         <img class="shoe" id="shoe5" src="images/shoes/shoe.collector.webp" alt="con-hightop">
                         <div class="container" id="5">
@@ -76,34 +200,47 @@
                          <sl-button>See More</sl-button>
                         </div>
                       </div> 
-            <div class="personality" id="scroll7"> <!------Alt------->
+            <div class="personality wrapper" id="scroll7"> <!------Alt------->
                 <img class="bg-img" id="bg-7" src="images/backgrounds/alt.jpg" alt="">
                         <img class="shoe" id="shoe7" src="images/shoes/shoe.alt.png" alt="con-hightop">
                         <div class="container" id="7">
                          <h2> Alternative </h2>
                          <sl-button>See More</sl-button>
                         </div>
+                  
                       </div>
+            
 
-     <!------Scroll bar-------->
-                    <nav class="scrollbar">
-                        <a class="scrolldot" href="hero"></a>
-                        <a class="scrolldot" href="scroll2"></a>
-                        <a class="scrolldot" href="scroll3"></a>
-                        <a class="scrolldot" href="scroll4"></a>
-                        <a class="scrolldot" href="scroll5"></a>
-                    </nav>
-
-
-                <section id="gallery1"> <!------NEW ARRIVAL GALLERY----->
-                    <div class="heading2">
+                    <!-------------------------------NEW ARRIVAL GALLERY----------------------->
+                <section id="gallery1"> 
+                     <div class="spinstar">
+                              <svg id="shine1" class="shine" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                          <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                          37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                          58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                          22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                          </svg>
+                            <svg id="shine2" class="shine" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                          <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                          37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                          58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                          22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                          </svg>
+                            <svg id="shine3" class="shine" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                          <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                          37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                          58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                          22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                          </svg>
+                </div>
+                  <div class="heading2">
                       <div class="text-group">
                         <h2> New Arrivals</h2>
                         <h3> Fresh, New and ready to be styled</h3></div>
                          <sl-button class="btn-big">See More</sl-button>
                     </div>
           
-                 <sl-carousel id="product-gallery" navigation pagination slides-per-page="4" slides-per-move="4">
+                 <sl-carousel id="product-gallery" navigation="none" pagination slides-per-page="4" slides-per-move="4">
                         <sl-carousel-item>
                           <img src="images/Gallery1/img1.png" alt="con">
                           <p>Chuck 70 Universal Black</p>
@@ -143,7 +280,8 @@
                     <div class="heading2">
                     <div class="text-group">
                     <h2> Worn By You</h2>
-                    <h3> Real Styles. Real People </h3></div>
+                    <h3> Real Styles. Real People </h3>
+                  </div>
                     <sl-button class="btn-big">Gallery</sl-button>
                 </div>
                  <div id="desc-card">
@@ -155,12 +293,12 @@
                     </div>
                 <div id="polaroid-stack">
                  <!---------POLAROID PICK AND DRAG GALLERY---------->
-                        <img  id="p1" class="polaroid" src="images/Polaroid/pol1.png" alt="polaroid" >
+                        <img id="p1" class="polaroid" src="images/Polaroid/pol1.png" alt="polaroid" >
                         <img id="p2" class="polaroid" src="images/Polaroid/pol2.png" alt="polaroid" > 
                         <img id="p3" class="polaroid" src="images/Polaroid/pol3.png" alt="polaroid"  >
                         <img id="p4" class="polaroid" src="images/Polaroid/pol4.png" alt="polaroid" >
                         <img id="p5" class="polaroid" src="images/Polaroid/pol5.png" alt="polaroid" >
-                        <img id="p6"  class="polaroid" src="images/Polaroid/pol6.png" alt="polaroid" >
+                        <img id="p6" class="polaroid" src="images/Polaroid/pol6.png" alt="polaroid" >
                         <img id="p7" class="polaroid" src="images/Polaroid/pol7.png" alt="polaroid" >
                         <img id="p8" class="polaroid" src="images/Polaroid/pol8.png" alt="polaroid" >
                         <img id="p9" class="polaroid" src="images/Polaroid/pol9.png" alt="polaroid">
@@ -173,115 +311,160 @@
 
                 <section id="info"> <!---------INTERACTIVE SHOE INFORMATION-->
                   <div class="heading2">
+                    <div class="text-group">
                     <h2> Designed With Purpose </h2>
+                    <h3> Learn more about how Converse has crafted every step you take.</h3></div>
+              
                   </div>
-                  <img class="star" src="images/stickers/star1.png" alt="">
-                  <img id="shoe-pair" src="images/hightop.pair.png" alt="">
+                  <div class="shoe-wrap">
+                  <img src="images/hightop.pair.png" alt="shoes">
+                  <svg id="star1" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                  37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                  58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                  22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                  </svg>
+                  <div class="popup-left">
+                   <sl-popup id="popup1" placement="top" distance="10" arrow>
+                    <span slot="anchor"></span>
+                    <div class="textbox">  <h3>The High Top Design</h3>
+                      <p>The High Top of the Converse was invented for ankle support by basketball player Chuck Taylor 
+                      It has become extremely beneficial to Converse's usuabilty and provides mroe visual interest. This sillouette is original
+                    to the brand since 1917. <br> <br> The high ankle support was noticed by skateboards and was then on adopted into a skating shoe with the support and 
+                  durabilty supported by other features, Converse began to reach new horizons with demographics</p></div>
+                    </sl-popup></div>
+                 <svg id="star2" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                  37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                  58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                  22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                  </svg>
+                  <sl-popup hoist id="popup2" placement="top" distance="10" arrow>
+                    <div slot="anchor"></div>
+                    <div class="textbox"> 
+                      <h3>"Chuck Taylor" Star Patch</h3>
+                     <p> The iconic Converse patch was not just a statement piece, it was created to
+                      prevent basketball players from knocking their ankles together. This was a design choice made by 
+                    Chuck Taylor, his signature was added to the shoe making it the first celebrity endorse athletic shoe in the world.
+                     The patch soon became an iconic symbol for the shoes, becoming easily recognisable
+                  providing the brand with originality and cultural significance.</p></div>
+                    </sl-popup>
+                  <svg id="star3" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                  37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                  58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                  22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                  </svg>
+                  <div class="popup-left"><sl-popup id="popup3" placement="top" distance="10" arrow hoist>
+                    <div slot="anchor"></div>
+                    <div class="textbox"> <h3>Stripped Outersole</h3> <p>The Outer sole of the converse was deisgned and made for durability and grip. Coverse were made to last, in fact, the first pair of
+                      Converse ever made is still in complete tact! <br><br>Converse shoes can be seen as an investment especially due to the thick outersole which on the chuck 70's 
+                    are made out of CX rubber which is designed for even further flexabilty further adding to the quality of our best selling shoe.</p></div>
+                    </sl-popup></div>
+                 <svg id="star4" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                  37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                  58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                  22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                  </svg>
+                  <div class="popup-right">
+                  <sl-popup id="popup4" placement="top" distance="10" arrow>
+                    <div slot="anchor"></div>
+                    <div class="textbox"> <h3> Rubber Toe Cap</h3> <p>The original design for the toe cap was for protection and style in order to minimise the impact 
+                    basketballers had on impact and wear. This toe cap evolved into a much beloved skatebaording shoe as it was tough enough to handle to 
+                  condition of the skateboard and pavement. <br><br> Now it is easily distinguishable from competitors and adds to the iconic appearance.</p></div>
+                    </sl-popup></div>
+                  <svg id="star5" slot="anchor" class="star" xmlns="http://www.w3.org/2000/svg" width="63" height="60" viewBox="0 0 63 60" fill="none">
+                  <path d="M37.8938 21.5669C38.1617 22.3908 38.9298 22.9487 39.7962 22.9487H61.4202L43.9261 35.6597C43.2251 36.1689 42.9319 37.071 43.1995 
+                  37.895L49.8811 58.4614L32.387 45.7515C31.686 45.2422 30.7364 45.2422 30.0354 45.7515L12.5413 
+                  58.4614L19.2229 37.895C19.4906 37.071 19.1973 36.1689 18.4964 35.6597L1.00223 22.9487H22.6263C23.4926 
+                  22.9487 24.2607 22.3908 24.5286 21.5669L31.2112 1.00049L37.8938 21.5669Z" stroke="black" stroke-width="2"/>
+                  </svg>
+                  <sl-popup id="popup5" placement="top" distance="10" arrow>
+                    <div slot="anchor"></div>
+                    <div class="textbox"> <h3> Rubber Sole Shoe</h3> <P>In the early 20th century rubber soles were frequently used to make durable, flexible and waterproof shoes.
+                      Converse are authentic to their roots and have kept the rubber soles since the original shoe. <br><br>The Rubber sole also makes for a more
+                      comfortable base gaining the versitlity of everday wear.</P>
+                    </div>
+                    </sl-popup>
+                  </div>     
+                  <sl-button onClick="playSound()" class="sound">Play Me</sl-button>  
                 </section>
 
         
 
-                <section id="time-gallery"> <!-----CONVERSE HISTORY STYLE GALLERY------->
-                  <div class="heading2">
+            <section id="time-gallery"> <!-----CONVERSE HISTORY STYLE GALLERY------->
+                  <div class="heading2 heading-long">
                     <div class="text-group">
                         <h2> Style Through Time </h2>
-                        <h3> See how our converse have been styled through the decades</h3></div>
-                        <sl-button class="btn-big">See More</sl-button>
-                    </div>
-                     <div>
-                          <sl-carousel id="style-timeline" pagination slides-per-page="2" slides-per-move="4">
-                            <sl-carousel-item>
-                              <img
-                                alt="90's style gallery"
-                                src="images/gallery2/90s.png"
-                              />
-                            </sl-carousel-item>
-                            <sl-carousel-item>
-                              <img
-                                alt="2000s style gallery"
-                                src="images/gallery2/2000s.png"
-                              />
-                            </sl-carousel-item>
-                            <sl-carousel-item>
-                              <img
-                                alt="2010s style gallery"
-                                src="images/gallery2/2010.png"
-                              />
-                            </sl-carousel-item>
-                            <sl-carousel-item>
-                              <img
-                                alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
-                                src="/assets/examples/carousel/field.jpg"
-                              />
-                            </sl-carousel-item>
-                            <sl-carousel-item>
-                              <img
-                                alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
-                                src="/assets/examples/carousel/valley.jpg"
-                              />
-                            </sl-carousel-item>
-                          </sl-carousel>
+                        <h3> See how our converse have been styled through the decades</h3>
+                      </div>
+                                        </div>
+                           <div> <!----Interactive fade in----->
+                            <div id="t90">
+                              <div class="pair">
+                              <img class="tag taghidden" src="images/gallery2/tag90.png" alt="tag">
+                                <img class="imghidden t-img"  id="img90" src="images/gallery2/90s.png" alt="">
+                                </div>
+                            </div>
+                            <div id="t00">
+                              <div class="pair">
+                              <img class="tag taghidden" src="images/gallery2/tag00.png" alt="tag">
+                                <img class="imghidden t-img" src="images/gallery2/2000s.png" alt="">
+                              </div>
+                            </div>
+                            <div id="t10">
+                              <div class="pair">
+                              <img class="tag taghidden"src="images/gallery2/tag10.png" alt="tag">
+                                <img class="imghidden t-img" src="images/gallery2/2010.png" alt="">
+                              </div>
+                            </div>
+                            <div id="t20">
+                              <div class="pair">
+                              <img class="tag taghidden" src="images/gallery2/tag20.png" alt="tag">
+                                <img class="imghidden t-img" src="images/gallery2/2020.png" alt="">
+                                </div>
+                            </div>
+                         
                            </div>
                                         </section>
 
+                                        <section id="upload">
+                                          <div class="heading2 heading-long">
+                                          <div class="text-group">
+                                            <h2> Show us your style</h2>
+                                            <h3> Upload your image here so we can share it on our gallery</h3>
+                                        </div>  
+                                      </div>
+                                            <div class="img-upload">
+                                                    <label for="input-file" id="drop-area">
+                                                      <input type="file" accept="image/*" id="input-file" hidden>
+                                                      <div id="img-view">
+                                                        <img src="images/upload.png" alt="">
+                                                        <h3> Drag and drop of click here <br> to upload image </h3>
+                                                        <p> Upload any images from desktop</p>
+                                                      </div>
+                                                    </label>
+                                            </div>
 
+                                            <div id="assorted-btn">
+                                                <button id="refresh">  &#8635</button>
+                                                <sl-button id="open-dialog" > SHARE </sl-button>
+                                                <button id="download">  &#8677</button>
+                                              </div>
 
+                                              <sl-dialog class="img-upload-msg">
+                                                  <h3>Thank You! </h3>
+                                                 <p> Your image is now apart of our style gallery, <br>
+                                                   where others can be inspired by <br>
+                                                    your converse styled outfit.</p>
+                                                  <sl-button class="no-style" slot="footer" variant="primary"></sl-button>
+                                                </sl-dialog>
+                                              </section>
 
-                <section id="sticker-chart">
-                   <div class="heading2">
-                    <div class="text-group">
-                        <h2> Show off your style </h2>
-                        <h3> Customise your photos and share it on our gallery </h3></div>
-                    </div>
-                      <div id="container2">
-                    <img id="big-pol" src="images/stickers/bigpol.png" alt="">
-                    
-                      <!-- <div class="trial">
-                          <label for="input-file" id="drop-area">
-                            <input type="file" accept="image/*" id="input-file"> 
-                          </label>
-                        </div>--> 
-
-
-                    <div id="stickers">
-                      <div class="stick-op">
-                      <select name="Filter" id="Filter">
-                        <option value="All">All</option>
-                        <option value="Faces">Faces</option>
-                        <option value="Space">Space</option>
-                        <option value="Groovy">Groovy</option>
-                      </select>
-                      <input type="text" placeholder="Search.." id="search"></div>
-                      <h4> Stickers</h4>
-                     
-                      <img id="s1" class="stick" src="images/stickers/s1.png" alt="">
-                      <img id="s2" class="stick" src="images/stickers/s2.png" alt="">
-                      <img id="s3" class="stick" src="images/stickers/s3.png" alt="">
-                      <img id="s4" class="stick" src="images/stickers/s4.png" alt="">
-                      <img id="s5" class="stick" src="images/stickers/s5.png" alt="">
-                      <img id="s6" class="stick" src="images/stickers/s6.png" alt="">
-                      <img id="s7" class="stick" src="images/stickers/s7.png" alt="">
-                      <img id="s8" class="stick" src="images/stickers/s8.png" alt="">
-                      <img id="s9" class="stick" src="images/stickers/s9.png" alt="">
-                      <img id="s10" class="stick" src="images/stickers/s10.png" alt="">
-                      <img id="s11" class="stick" src="images/stickers/s11.png" alt="">
-                      <img id="s12" class="stick" src="images/stickers/s12.png" alt="">
-                      <img id="s13" class="stick" src="images/stickers/s13.png" alt="">
-                      <img id="s14" class="stick" src="images/stickers/s14.png" alt="">
-                      <img id="s15" class="stick" src="images/stickers/s15.png" alt="">
-                      <img id="s16" class="stick" src="images/stickers/s16.png" alt="">
-                     
-                    </div>
-                  </div>
-                  <div id="assorted-btn">
-                    <button class="refresh"> 	&#8635</button>
-                    <button class="share"> SHARE </button>
-                    <button class="download">  &#8677</button>
-                  </div>
-                </section>
 
                 <div class="gap"></div>
-
+                                                  <div class="closing-title"> <h2> What to know more about us?</h2></div>
                 <section id="summary">
                   <div class="box-left">
                     <div class="email"> 
@@ -289,7 +472,7 @@
                       <p> Don't miss the latest news on product launches, collabs and more.</p>
                       <div class="email-row">
                       <input type="text" id="lname" placeholder="Your Email..." name="lname"><br><br>
-                      <input id="arrow-btn" type="submit" value="&#8594;">
+                      <input id="submit" type="submit" value="&#8594;">
                       </div>
                     </div>
                     <div class="socials">
@@ -311,21 +494,21 @@
                       <p>  My Account </p>
                       <p> Payment and Gift Cards </p> 
                       <p> Promotion Conditions </p>   
-                      <p>   Feedback</p>
-                      <p>   Student Discount </p> 
-                
-                  </div>
+                      <p> Feedback</p>
+                      <p> Student Discount </p> 
+                </div>
+                 
                 </section>
-
- <footer>
-  <p> Terms of Use</p>
-  <P> Privacy and Cookies</P>
-  <p>Conquest Sports (Aust) Pty Ltd. Licensed Distributor of Converse. 
-    Authorised User of Converse Trademarks.
-</p>
-<p>© 2025 Converse</p>
- </footer>
-
+                      <footer>
+                        <div><p> Terms of Use</p></div>
+                      <div><P> Privacy and Cookies</P></div> 
+                      <div> <p>Conquest Sports (Aust) Pty Ltd. Licensed Distributor of Converse. 
+                          Authorised User of Converse Trademarks.</p></div>
+                   <div> <p>© 2025 Converse</p></div> 
+                      </footer>
+          <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/dialog/dialog.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
             <script src="JS/gsap.min.js"></script>
             <script src="JS/ScrollTrigger.min.js"></script>
              <script src="JS/main.js"></script>
