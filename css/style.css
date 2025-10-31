@@ -10,6 +10,9 @@
 .gap{
   height: 200px;
 }
+.menu-button{
+  display: none;
+}
 .navbar a:last-of-type{
 position: absolute;
 top: 14px;
@@ -2078,5 +2081,7 @@ gap: 1rem;
 .hideOnMobile{
   display:none;
 }
-
+.menu-button{
+  display:block;
+}
 }
