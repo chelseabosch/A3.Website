@@ -2,20 +2,6 @@
 gsap.registerPlugin(ScrollTrigger);
 //---------------PARALLAX SCROLL HERO---------// AI used to understand how to make it more dynamic and understand gsap code
 gsap.utils.toArray(".personality").forEach(section => {
-  const bg = section.querySelector(".bg-img");
-  gsap.to(bg, {
-    yPercent: 0,                     // move up while we scroll down
-    ease: "none",
-    scrollTrigger: {
-    trigger: section,
-    start: "top bottom",             // when top of section hits bottom of vp
-    end: "bottom top",
-    scrub: true                      // link to scroll position
-    }
-  });
-});
-/* 2.  FADE + SLIDE  – shoe and container pop in once */
-gsap.utils.toArray(".personality").forEach(section => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
@@ -28,7 +14,7 @@ gsap.utils.toArray(".personality").forEach(section => {
   });
   tl.from(section.querySelector(".shoe"), {
     opacity: 0,
-    x: 80,                            // slide up from below
+    x: 80,                          
     duration: .7,
     ease: "power2.out"
   })
@@ -37,13 +23,13 @@ gsap.utils.toArray(".personality").forEach(section => {
     y: 50,
     duration: .7,
     ease: "power2.out"
-  });                          // overlap slightly
+  });                       
 });
 
 //-----------------SKIP HERO BUTTON--------------//  AI used to troubleshoot this feature
 ScrollTrigger.create({
-  trigger: "#gallery1",          // when gallery hits viewport
-  start: "top 95%",             // (almost at bottom)
+  trigger: "#gallery1",         
+  start: "top 95%",           
   onEnter: () =>{ gsap.to("#skip", { opacity: 0, duration: 0.3 }),
   gsap.to(".scrollbar", { opacity: 0, duration: 0.3, pointerEvents: "none" });
 },
@@ -54,7 +40,7 @@ ScrollTrigger.create({
 
 //------------  POLAROID CLICK AND DRAG --------------// AI used to understand and troubleshoot this code, struggle to find  tutorials specific to this idea
 const stack = document.getElementById('polaroid-stack');
-const cardZ = 100;                 // #desc-card z-index
+const cardZ = 100;               
 let highest = cardZ; 
 
 stack.querySelectorAll('.polaroid').forEach(img => {
